@@ -1,3 +1,7 @@
+
+import { getNode } from "./getNode.js";
+import { isString } from "../utils/type.js";
+
 function getAttr(node,prop){
 
   if(isString(node)) node = getNode(node);
@@ -47,4 +51,4 @@ function setAttr (node,prop,value){
 //   }
 // }
 
-const attr = (node,prop,value) => !value ? getAttr(node,prop) : setAttr(node,prop,value)
+ export const attr = (node,prop,value) => !value ? getAttr(node,prop) : setAttr(node,prop,value)
