@@ -1,5 +1,7 @@
 /* global gsap */
 
+/* global gsap */
+
 export function shake(t) {
   const animation = gsap.to(t, {
     duration: 0.1,
@@ -10,5 +12,3 @@ export function shake(t) {
 
   return animation;
 }
-
-shake().restart();

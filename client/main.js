@@ -1,5 +1,6 @@
 import data from './data/data.js';
 import {
+  copy,
   shake,
   getNode,
   addClass,
@@ -63,8 +64,9 @@ function handleCopy() {
   const text = result.textContent;
 
   if (nameField.value) {
-    navigator.clipboard.writeText(text);
-    showAlert('.alert-success', '클립보드 복사 완료!');
+    copy(text).then(() => {
+      showAlert('.alert-success', '클립보드 복사 완료!');
+    });
   }
 }
 
