@@ -135,4 +135,4 @@ async function getData() {
   );
 }
 
-// getData()
+getData();
