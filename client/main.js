@@ -1,4 +1,4 @@
-//* global gsap */
+/* global gsap */
 
 import {
   tiger,

@@ -4,10 +4,10 @@ import { getNode } from './getNode.js';
 
 /**
  *
- * @param {HTMLElement | String} node
- * @param {String} message
- * @param {Number} timeout
- * @returns {void}
+//  * @param {HTMLElement | String} node
+//  * @param {String} message
+//  * @param {Number} timeout
+//  * @returns {void}
  */
 
 export function showAlert(node, message, timeout = 1000) {
