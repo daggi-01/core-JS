@@ -1,56 +1,18 @@
-import {
-  getNode,
-  getStorage,
-  setStorage,
-  deleteStorage,
-  clearContents,
-} from './lib/index.js';
-
-const textField = getNode('#textField');
-const clear = getNode('button[data-name="clear"]');
-
-getStorage('text').then((res) => {
-  textField.value = res;
-});
-
-function handleTextField() {
-  const value = this.value;
-
-  setStorage('text', value);
+class MyElement extends HTMLElement {
+  constructor() {
+    super();
+  }
+  connectedCollback() {
+    console.log('탄생함');
+  }
+  disconnectedCallback() {
+    console.log('죽음');
+  }
 }
 
-function handleClear() {
-  deleteStorage('text');
-  clearContents(textField);
-}
+customElements.define('c-elemnent', MyElement);
 
-textField.addEventListener('input', handleTextField);
-clear.addEventListener('click', handleClear);
-import {
-  getNode,
-  getStorage,
-  setStorage,
-  deleteStorage,
-  clearContents,
-} from './lib/index.js';
+const elem = document.createElement('c-element');
+const app = document.getElementById('app');
 
-const textField = getNode('#textField');
-const clear = getNode('button[data-name="clear"]');
-
-getStorage('text').then((res) => {
-  textField.value = res;
-});
-
-function handleTextField() {
-  const value = this.value;
-
-  setStorage('text', value);
-}
-
-function handleClear() {
-  deleteStorage('text');
-  clearContents(textField);
-}
-
-textField.addEventListener('input', handleTextField);
-clear.addEventListener('click', handleClear);
+app.appendChild(elem);
